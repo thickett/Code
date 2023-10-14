@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Form from "./assets/components/Form";
 import ItemsTable from "./expense-tracker/components/ItemsTable";
 

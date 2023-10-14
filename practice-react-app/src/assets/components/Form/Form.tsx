@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
-import React, { FormEvent, useRef } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 // define a schema using z.object.
