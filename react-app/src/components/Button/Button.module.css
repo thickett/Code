@@ -1,0 +1,36 @@
+.buttonStandard {
+    padding: 15px 32px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(57, 163, 167);
+    }
+.buttonSmall {
+    padding: 7.5px 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(57, 163, 167);
+    }
+
+.buttonTiny {
+    padding: 5px 10.7px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(57, 163, 167);
+    }
+
+.buttonShadow:hover {
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.buttonResize:hover {
+    transition-duration: 0.2s;
+    transform: scale(1.2);
+}
+
+.buttonPad {
+    margin-right: 4px
+}
