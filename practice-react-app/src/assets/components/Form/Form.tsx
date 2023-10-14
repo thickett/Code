@@ -18,14 +18,10 @@ const schema = z.object({
 });
 
 //create a type using the above schema
-type formData = z.infer<typeof schema>;
-
-interface Prop {
-  onSubmit: (data: formData) => void;
-}
+export type FormDataType = z.infer<typeof schema>;
 
 // create our Formhook from the react-hook-form library
-const Form = ({ onSubmit }: Prop) => {
+const Form = () => {
   const {
     register /*This is how we reference inputs and know what to log, this is spread in inputs and assinged a name from the schema */,
     handleSubmit /*This handles submit event and is to be placed in the form element along with an arrow function to say what to do with the data*/,
@@ -33,13 +29,13 @@ const Form = ({ onSubmit }: Prop) => {
       errors,
       isValid,
     } /*errors is an object for validation which Zod hhandles, isValid can be used to check if a form is valid for submission or not.*/,
-  } = useForm<formData>({
+  } = useForm<FormDataType>({
     resolver: zodResolver(schema),
     defaultValues: { Category: "" },
-  }); /*<formData tells us the type of the form, the resolver tells uus the contents of the schema to be used*/
+  }); /*<FormDataType tells us the type of the form, the resolver tells uus the contents of the schema to be used*/
 
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data.Category))}>
+    <form onSubmit={handleSubmit((data) => console.log(data))}>
       <div className="mb-3">
         <label htmlFor="description" className="form-label">
           Description

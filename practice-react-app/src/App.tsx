@@ -1,13 +1,20 @@
 import { useState } from "react";
 import Form from "./assets/components/Form";
-import ItemsTable from "./assets/ItemsTable";
+import ItemsTable from "./expense-tracker/components/ItemsTable";
 
 function App() {
-  const [newTableItems, setNewTableItems] = useState("");
+  const expenses = [
+    { id: 1, description: "milk", cost: 2, category: "groceries" },
+    { id: 2, description: "bread", cost: 1, category: "groceries" },
+    { id: 3, description: "hair spray", cost: 7.5, category: "cosmetic" },
+  ];
   return (
     <>
-      <Form onSubmit={() => setNewTableItems("")}></Form>
-      <ItemsTable></ItemsTable>;<p>{newTableItems}</p>
+      <Form></Form>
+      <ItemsTable
+        expenses={expenses}
+        onDelete={(id) => console.log("delete", id)}
+      ></ItemsTable>
     </>
   );
 }
