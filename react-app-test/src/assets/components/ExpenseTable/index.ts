@@ -1,3 +1,3 @@
-import ExpenseTable from './ExpenseTable'
+import ExpenseTable from "./ExpenseTable"
 
 export default ExpenseTable

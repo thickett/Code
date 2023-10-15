@@ -1,18 +1,15 @@
-import React from "react";
-
-interface expenseType {
+interface Expense {
   id: number;
   description: string;
   cost: number;
   category: string;
 }
-
-interface Prop {
-  expenses: expenseType[];
+interface prop {
+  expenses: Expense[];
   onDelete: (id: number) => void;
 }
 
-const ExpenseTable = ({ expenses, onDelete }: Prop) => {
+const ExpenseTable = ({ expenses, onDelete }: prop) => {
   return (
     <table className="table table-bordered">
       <thead>
@@ -25,31 +22,32 @@ const ExpenseTable = ({ expenses, onDelete }: Prop) => {
       </thead>
       <tbody>
         {expenses.map((expense) => (
-          <tr>
-            <td>{expense.description}</td>
-            <td>{expense.cost}</td>
-            <td>{expense.category}</td>
-            <td>
+          <tr key={expense.id}>
+            <th>{expense.description}</th>
+            <th>£{expense.cost.toFixed(2)}</th>
+            <th>{expense.category}</th>
+            <th>
               <button
                 className="btn btn-outline-danger"
                 onClick={() => onDelete(expense.id)}
               >
                 Delete
               </button>
-            </td>
+            </th>
           </tr>
         ))}
       </tbody>
       <tfoot>
         <tr>
-          <td>Total</td>
-          <td>
+          <th>Total</th>
+          <th>
+            £
             {expenses
               .reduce((acc, expense) => expense.cost + acc, 0)
               .toFixed(2)}
-          </td>
-          <td></td>
-          <td></td>
+          </th>
+          <th></th>
+          <th></th>
         </tr>
       </tfoot>
     </table>
