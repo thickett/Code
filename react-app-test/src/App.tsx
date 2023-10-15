@@ -1,7 +1,6 @@
 import ExpenseTable from "./assets/components/ExpenseTable";
-import React, { useState } from "react";
+import { useState } from "react";
 import Expenseform from "./assets/components/ExpenseForm";
-import { FormDataType } from "./assets/components/ExpenseForm/Expenseform";
 import ExpenseTableFilter from "./assets/components/ExpenseTableFilter";
 
 const App = () => {
